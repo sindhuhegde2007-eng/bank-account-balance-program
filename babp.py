@@ -1,11 +1,12 @@
 # Ask the user for initial balance
 initial_balance = float(input("Enter your initial balance: ₹"))
 
-# Ask for deposit amount
-deposit_amount = float(input("Enter the deposit amount: ₹"))
+# Ask for withdrawal amount
+withdraw_amount = float(input("Enter the withdrawal amount: ₹"))
 
-# Calculate updated balance
-updated_balance = initial_balance + deposit_amount
-
-# Display the result
-print(f"Your updated balance is: ₹{updated_balance:.2f}")
+# Check if withdrawal is possible
+if withdraw_amount > initial_balance:
+    print("Insufficient balance! Withdrawal denied.")
+else:
+    new_balance = initial_balance - withdraw_amount
+    print(f"Withdrawal successful. New balance: ₹{new_balance:.2f}")
